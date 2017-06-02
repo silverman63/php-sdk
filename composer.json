@@ -1,5 +1,5 @@
 {
-    "name":             "Watson Developer Cloud PHP SDK",
+    "name":             "watson-developer-cloud/php-sdk",
     "version": 			"1.0.0",
     "description":      "Client library to use the IBM Watson Services",
     "keywords":         [
