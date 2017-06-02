@@ -1,2 +1,2 @@
-# watson-php-sdk
-Watson Developer Cloud PHP SDK
+# Watson Developer Cloud PHP SDK
+
