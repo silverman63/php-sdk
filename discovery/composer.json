@@ -1,0 +1,19 @@
+{
+    "name":             "watson-developer-cloud/php-sdk/discovery",
+    "version": 			"3.8.0",
+    "description":      "IBM Watson Services - Discovery",
+    "keywords":         [
+                          "ibm",
+                          "watson",
+                          "wdc",
+                          "watson developer cloud",
+                          "discovery"],
+    "homepage":         "https://github.com/ThomasIBM/php-sdk/tree/master/discovery",
+    "time":             "2017-06-02",
+    "license":          "Apache-2.0",
+    "authors": [{
+        "name":         "Thomas",
+        "email":        "guojial@cn.ibm.com",
+        "homepage":     "https://github.com/ThomasIBM"
+    }]
+}
