@@ -354,5 +354,220 @@ Class Discovery {
 		return $result;
 	}
 
+	/*
+	* createCollection
+	* @param url
+	* @param username
+	* @param password
+	* @environmentId
+	* @collectionName
+	* @collectionDesc
+	* @configurationId
+	* 
+	* @result json
+	* 
+	* This operation is invalid for read-only environments
+	*/
+	public function createCollection($url, $username, $password, $environmentId, $collectionName, $collectionDesc, $configurationId) {
+
+		$url = str_replace("{environment_id}", $environmentId, $url);
+
+		$data["name"] = $collectionName;
+		$data["description"] = $collectionDesc;
+		$data["configuration_id"] = $configurationId;
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array (
+			"Content-Type: application/json"
+		));
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data, JSON_UNESCAPED_UNICODE));
+		curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		return $result;
+
+	}
+
+	/*
+	* getCollections
+	* @param url
+	* @param username
+	* @param password
+	* @environmentId
+	* 
+	* @result json
+	* 
+	*/
+	public function getCollections($url, $username, $password, $environmentId) {
+
+		$url = str_replace("{environment_id}", $environmentId, $url);
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array (
+			"Content-Type: application/json"
+		));
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		return $result;
+
+	}
+
+	/*
+	* getCollection
+	* @param url
+	* @param username
+	* @param password
+	* @environmentId
+	* @collectionId
+	* 
+	* @result json
+	* 
+	*/
+	public function getCollection($url, $username, $password, $environmentId, $collectionId) {
+
+		$url = str_replace("{environment_id}", $environmentId, $url);
+		$url = str_replace("{collection_id}", $collectionId, $url);
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array (
+			"Content-Type: application/json"
+		));
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		return $result;
+
+	}
+
+	/*
+	* updateCollection
+	* @param url
+	* @param username
+	* @param password
+	* @environmentId
+	* @collectionId
+	* @collectionName
+	* @collectionDesc
+	* @configurationId
+	* 
+	* @result json
+	* 
+	* This operation is invalid for read-only environments
+	* 
+	*/
+	public function updateCollection($url, $username, $password, $environmentId, $collectionId, $collectionName, $collectionDesc, $configurationId) {
+
+		$url = str_replace("{environment_id}", $environmentId, $url);
+		$url = str_replace("{collection_id}", $collectionId, $url);
+
+		$data["name"] = $collectionName;
+		$data["description"] = $collectionDesc;
+		$data["configuration_id"] = $configurationId;
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array (
+			"Content-Type: application/json"
+		));
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data, JSON_UNESCAPED_UNICODE));
+		curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+		return $result;
+
+	}
+
+	/*
+	* getCollectionFields
+	* @param url
+	* @param username
+	* @param password
+	* @environmentId
+	* @collectionId
+	* 
+	* @result json
+	* 
+	*/	
+	public function getCollectionFields($url, $username, $password, $environmentId, $collectionId) {
+
+			$url = str_replace("{environment_id}", $environmentId, $url);
+			$url = str_replace("{collection_id}", $collectionId, $url);
+
+			$ch = curl_init(); 
+		    curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+			curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			return $result;	
+
+	}
+
+	/*
+	* deleteCollection
+	* @param url
+	* @param username
+	* @param password
+	* @environmentId
+	* @collectionId
+	* 
+	* @result json
+	* 
+	* This operation is invalid for read-only environments
+	*/
+	public function deleteCollection($url, $username, $password, $environmentId, $collectionId) {
+
+			$url = str_replace("{environment_id}", $environmentId, $url);
+			$url = str_replace("{collection_id}", $collectionId, $url);
+
+			$ch = curl_init(); 
+		    curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+			curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			return $result;	
+
+	}
+
 }
 ?>
