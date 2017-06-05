@@ -17,8 +17,20 @@ The PHP SDK uses the [Watson Developer Cloud][wdc] services, a collection of RES
 
 All the services:
 
-composer require watson-developer-cloud/php-sdk
+```composer
+'composer require watson-developer-cloud/php-sdk'
+```
+or
 
+Add require to your project composer.json file
+
+```composer
+{
+    "require": {
+        "watson-developer-cloud/php-sdk": "^1.0"
+    }
+}
+```
 ## Usage
 
 The examples within each service assume that you already have service credentials. If not,
