@@ -16,7 +16,7 @@ $data["keywords"]["entities"]["sentiment"]=true;
 $data["keywords"]["entities"]["limit"]=2;
 
 $nlu = new NaturalLanguageUnderstanding();
-$nlu->analyzePost($url, $username, $password, $data);
+$nlu->analyze($url, $username, $password, $data);
 ```
 
 [natural-language-understanding]: http://www.ibm.com/watson/developercloud/doc/natural-language-understanding/
