@@ -10,6 +10,7 @@ The PHP SDK uses the [Watson Developer Cloud][wdc] services, a collection of RES
   * [Questions](#questions)
   * IBM Watson Services
     * [Discovery](discovery)
+    * [Natural Language Understanding](natural-language-understanding)
 
 ## Installation
 
@@ -40,7 +41,7 @@ If you are running your application in Bluemix, you don't need to specify the
 credentials; the library will get them for you by looking at the `VCAP_SERVICES` environment variable.
 
 ## Getting the Service Credentials
-You will need the `username` and `password` (`api_key` for AlchemyAPI) credentials for each service. Service credentials are different from your Bluemix account username and password.
+You will need the `username` and `password` (`api_key` for Discovery API) credentials for each service. Service credentials are different from your Bluemix account username and password.
 
 To get your service credentials, follow these steps:
  1. Log in to Bluemix at https://bluemix.net.
@@ -52,7 +53,7 @@ To get your service credentials, follow these steps:
 
  1. Copy your credentials:
      1. On the left side of the page, click **Service Credentials** to view your service credentials.
-     1. Copy `username` and `password`(`api_key` for AlchemyAPI).
+     1. Copy `username` and `password`(`api_key` for Discovery API).
 
 Once you have credentials, copy config.properties.example to src/test/resources/config.properties, and fill them in as necessary.
 
