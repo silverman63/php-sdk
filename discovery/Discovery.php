@@ -1,6 +1,4 @@
 <?php
-
-
 /*
  * Copyright 2017 IBM Corp. All Rights Reserved.
  *
@@ -81,7 +79,7 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
+	* @param environmentId
 	* 
 	* @result String
 	*/
@@ -111,10 +109,10 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @environmentName
-	* @environmentDesc
-	* @size
+	* @param environmentId
+	* @param environmentName
+	* @param environmentDesc
+	* @param size
 	* 
 	* @result String
 	* 
@@ -151,7 +149,7 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
+	* @param environmentId
 	* 
 	* @result String
 	* 
@@ -183,8 +181,8 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @configurationName
+	* @param environmentId
+	* @param configurationName
 	* 
 	* @result String
 	* 
@@ -219,7 +217,7 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
+	* @param environmentId
 	* 
 	* @result String
 	* 
@@ -250,8 +248,8 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @configurationId
+	* @param environmentId
+	* @param configurationId
 	* 
 	* @result String
 	* 
@@ -283,9 +281,9 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @configurationId
-	* @configurationName
+	* @param environmentId
+	* @param configurationId
+	* @param configurationName
 	* 
 	* @result String
 	* 
@@ -321,8 +319,8 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @configurationId
+	* @param environmentId
+	* @param configurationId
 	* 
 	* @result String
 	* 
@@ -355,10 +353,10 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionName
-	* @collectionDesc
-	* @configurationId
+	* @param environmentId
+	* @param collectionName
+	* @param collectionDesc
+	* @param configurationId
 	* 
 	* @result String
 	* 
@@ -395,7 +393,7 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
+	* @param environmentId
 	* 
 	* @result String
 	* 
@@ -426,8 +424,8 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
+	* @param environmentId
+	* @param collectionId
 	* 
 	* @result String
 	* 
@@ -459,11 +457,11 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
-	* @collectionName
-	* @collectionDesc
-	* @configurationId
+	* @param environmentId
+	* @param collectionId
+	* @param collectionName
+	* @param collectionDesc
+	* @param configurationId
 	* 
 	* @result String
 	* 
@@ -502,8 +500,8 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
+	* @param environmentId
+	* @param collectionId
 	* 
 	* @result String
 	* 
@@ -535,8 +533,8 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
+	* @param environmentId
+	* @param collectionId
 	* 
 	* @result String
 	* 
@@ -569,9 +567,9 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
-	* @documentUrl
+	* @param environmentId
+	* @param collectionId
+	* @param documentUrl
 	* 
 	* @result String
 	* 
@@ -607,10 +605,10 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
-	* @documentId
-	* @documentUrl
+	* @param environmentId
+	* @param collectionId
+	* @param documentId
+	* @param documentUrl
 	* 
 	* @result String
 	* 
@@ -647,9 +645,9 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
-	* @documentId
+	* @param environmentId
+	* @param collectionId
+	* @param documentId
 	* 
 	* @result String
 	* 
@@ -683,9 +681,9 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
-	* @documentId
+	* @param environmentId
+	* @param collectionId
+	* @param documentId
 	* 
 	* @result String
 	* 
@@ -719,12 +717,12 @@ Class Discovery {
 	* @param url
 	* @param username
 	* @param password
-	* @environmentId
-	* @collectionId
-	* @keywords
-	* @count
-	* @filter
-	* @return
+	* @param environmentId
+	* @param collectionId
+	* @param keywords
+	* @param count
+	* @param filter
+	* @param return
 	* 
 	* @result String
 	* 
