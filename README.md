@@ -28,7 +28,7 @@ Add require to your project composer.json file
 ```composer
 {
     "require": {
-        "watson-developer-cloud/php-sdk": "^2.0"
+        "watson-developer-cloud/php-sdk": "^2.1"
     }
 }
 ```

@@ -14,17 +14,28 @@
  */
 class NaturalLanguageUnderstanding {
 
+	const BASE_URL = "https://gateway.watsonplatform.net/natural-language-understanding/api/v1";
+
+	function __construct() {
+       
+    }
+
 	/*
 	* analyze
-	* @param url
 	* @param username
 	* @param password
-	* @param data
+	* @param features
+	* @param input
+	* @param inputType
 	* 
 	* @result String
 	* 
 	*/
-	function analyze($url, $username, $password, $data) {
+	function analyze($username, $password, $features, $input, $inputType) {
+
+		$url = self::BASE_URL . "/analyze?version=2017-02-27";
+		$data = $features;
+		$data[$inputType]=$input;
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -47,17 +58,16 @@ class NaturalLanguageUnderstanding {
 
 	/*
 	* analyzeGet
-	* @param url
 	* @param username
 	* @param password
-	* @param urlParam
 	* 
 	* @result String
 	* 
 	*/
-	function analyzeGet($url, $username, $password, $urlParam) {
+	function analyzeGet($username, $password) {
 
-		$url = $url . $urlParam;
+		$url = self::BASE_URL . "/analyze?version=2017-02-27";
+		$url = $url . "&url=www.ibm.com&features=keywords&entities.emotion=true&entities.sentiment=true&keywords.emotion=true&keywords.sentiment=true";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
