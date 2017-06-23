@@ -1,0 +1,19 @@
+{
+    "name":             "watson-developer-cloud/php-sdk/natural-language-classifier",
+    "version": 			"1.0",
+    "description":      "IBM Watson Services - Natural Language Classifier",
+    "keywords":         [
+                          "ibm",
+                          "watson",
+                          "wdc",
+                          "watson developer cloud",
+                          "natural language classifier"],
+    "homepage":         "https://github.com/ThomasIBM/php-sdk/tree/master/natural-language-classifier",
+    "time":             "2017-06-23",
+    "license":          "Apache-2.0",
+    "authors": [{
+        "name":         "Thomas",
+        "email":        "guojial@cn.ibm.com",
+        "homepage":     "https://github.com/ThomasIBM"
+    }]
+}

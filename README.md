@@ -11,6 +11,7 @@ The PHP SDK uses the [Watson Developer Cloud][wdc] services, a collection of RES
   * IBM Watson Services
     * [Discovery](discovery)
     * [Natural Language Understanding](natural-language-understanding)
+    * [Natural Language Classifier](natural-language-classifier)
 
 ## Installation
 
@@ -28,7 +29,7 @@ Add require to your project composer.json file
 ```composer
 {
     "require": {
-        "watson-developer-cloud/php-sdk": "^2.1"
+        "watson-developer-cloud/php-sdk": "^3.0"
     }
 }
 ```
