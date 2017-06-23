@@ -1,6 +1,6 @@
 {
     "name":             "watson-developer-cloud/php-sdk/natural-language-understanding",
-    "version": 			"1.1",
+    "version": 			"1.2",
     "description":      "IBM Watson Services - Natural Language Understanding",
     "keywords":         [
                           "ibm",
@@ -9,7 +9,7 @@
                           "watson developer cloud",
                           "natural language understanding"],
     "homepage":         "https://github.com/ThomasIBM/php-sdk/tree/master/natural-language-understanding",
-    "time":             "2017-06-09",
+    "time":             "2017-06-16",
     "license":          "Apache-2.0",
     "authors": [{
         "name":         "Thomas",
