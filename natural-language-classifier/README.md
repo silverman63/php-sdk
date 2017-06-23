@@ -6,7 +6,7 @@ Use [Natural Language Classifier][natural-language-classifier] service to create
 ```php
 
 $nlc = new NaturalLanguageClassifier();
-$nlc->classify($username, $password, $features, $classifierId, "Is it sunny?");
+$nlc->classify($username, $password, $classifierId, "Is it sunny?");
 ```
 
 [natural-language-classifier]: http://www.ibm.com/watson/developercloud/doc/natural-language-classifier/index.html
