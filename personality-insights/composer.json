@@ -1,0 +1,19 @@
+{
+    "name":             "watson-developer-cloud/php-sdk/personality-insights",
+    "version": 			"1.0",
+    "description":      "IBM Watson Services - Personality Insights",
+    "keywords":         [
+                          "ibm",
+                          "watson",
+                          "wdc",
+                          "watson developer cloud",
+                          "personality insights"],
+    "homepage":         "https://github.com/ThomasIBM/php-sdk/tree/master/personality-insights",
+    "time":             "2017-06-23",
+    "license":          "Apache-2.0",
+    "authors": [{
+        "name":         "Thomas",
+        "email":        "guojial@cn.ibm.com",
+        "homepage":     "https://github.com/ThomasIBM"
+    }]
+}
