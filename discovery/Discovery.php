@@ -12,18 +12,28 @@
  * specific language governing permissions and limitations under the License.
  */
 Class Discovery {
+	
+	const BASE_URL = "https://gateway.watsonplatform.net/discovery/api/v1/environments";
+	
+	function __construct() {
+       
+    }
 
 	/*
 	* createEnvironment
-	* @param url
 	* @param username
 	* @param password
+	* @param environmentName
+	* @param environmentDesc
+	* @param size
 	* 
 	* @result String
 	* 
 	* not allowed for free account
 	*/
-	public function createEnvironment($url, $username, $password, $environmentName, $environmentDesc, $size) {
+	public function createEnvironment($username, $password, $environmentName, $environmentDesc, $size) {
+
+		$url = self::BASE_URL . "?version=2016-12-01";
 
 		$data["name"] = $environmentName;
 		$data["description"] = $environmentDesc;
@@ -49,13 +59,14 @@ Class Discovery {
 
 	/*
 	* getEnvironments
-	* @param url
 	* @param username
 	* @param password
 	* 
 	* @result String
 	*/
-	public function getEnvironments($url, $username, $password) {
+	public function getEnvironments($username, $password) {
+
+		$url = self::BASE_URL . "?version=2016-12-01";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -83,8 +94,9 @@ Class Discovery {
 	* 
 	* @result String
 	*/
-	public function getEnvironment($url, $username, $password, $environmentId) {
+	public function getEnvironment($username, $password, $environmentId) {
 
+		$url = self::BASE_URL . "/{environment_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 
 		$ch = curl_init();
@@ -106,7 +118,6 @@ Class Discovery {
 
 	/*
 	* updateEnvironment
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -118,8 +129,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function updateEnvironment($url, $username, $password, $environmentId, $environmentName, $environmentDesc, $size) {
+	public function updateEnvironment($username, $password, $environmentId, $environmentName, $environmentDesc, $size) {
 
+		$url = self::BASE_URL . "/{environment_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 
 		$data["name"] = $environmentName;
@@ -146,7 +158,6 @@ Class Discovery {
 
 	/*
 	* deleteEnvironment
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -155,8 +166,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function deleteEnvironment($url, $username, $password, $environmentId) {
+	public function deleteEnvironment($username, $password, $environmentId) {
 
+		$url = self::BASE_URL . "/{environment_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 
 		$ch = curl_init();
@@ -178,7 +190,6 @@ Class Discovery {
 
 	/*
 	* createConfiguration
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -188,8 +199,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function createConfiguration($url, $username, $password, $environmentId, $configurationName) {
+	public function createConfiguration($username, $password, $environmentId, $configurationName) {
 
+		$url = self::BASE_URL . "/{environment_id}/configurations?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 
 		$data["name"] = $configurationName;
@@ -214,7 +226,6 @@ Class Discovery {
 
 	/*
 	* getConfigurations
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -222,8 +233,9 @@ Class Discovery {
 	* @result String
 	* 
 	*/
-	public function getConfigurations($url, $username, $password, $environmentId) {
+	public function getConfigurations($username, $password, $environmentId) {
 
+		$url = self::BASE_URL . "/{environment_id}/configurations?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 
 		$ch = curl_init();
@@ -245,7 +257,6 @@ Class Discovery {
 
 	/*
 	* getConfiguration
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -254,8 +265,9 @@ Class Discovery {
 	* @result String
 	* 
 	*/
-	public function getConfiguration($url, $username, $password, $environmentId, $configurationId) {
+	public function getConfiguration($username, $password, $environmentId, $configurationId) {
 
+		$url = self::BASE_URL . "/{environment_id}/configurations/{configuration_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{configuration_id}", $configurationId, $url);
 
@@ -278,7 +290,6 @@ Class Discovery {
 
 	/*
 	* updateConfiguration
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -289,8 +300,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function updateConfiguration($url, $username, $password, $environmentId, $configurationId, $configurationName) {
+	public function updateConfiguration($username, $password, $environmentId, $configurationId, $configurationName) {
 
+		$url = self::BASE_URL . "/{environment_id}/configurations/{configuration_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{configuration_id}", $configurationId, $url);
 
@@ -316,7 +328,6 @@ Class Discovery {
 
 	/*
 	* deleteConfiguration
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -326,8 +337,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function deleteConfiguration($url, $username, $password, $environmentId, $configurationId) {
+	public function deleteConfiguration($username, $password, $environmentId, $configurationId) {
 
+		$url = self::BASE_URL . "/{environment_id}/configurations/{configuration_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{configuration_id}", $configurationId, $url);
 
@@ -350,7 +362,6 @@ Class Discovery {
 
 	/*
 	* createCollection
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -362,8 +373,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function createCollection($url, $username, $password, $environmentId, $collectionName, $collectionDesc, $configurationId) {
+	public function createCollection($username, $password, $environmentId, $collectionName, $collectionDesc, $configurationId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 
 		$data["name"] = $collectionName;
@@ -390,7 +402,6 @@ Class Discovery {
 
 	/*
 	* getCollections
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -398,8 +409,9 @@ Class Discovery {
 	* @result String
 	* 
 	*/
-	public function getCollections($url, $username, $password, $environmentId) {
+	public function getCollections($username, $password, $environmentId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 
 		$ch = curl_init();
@@ -421,7 +433,6 @@ Class Discovery {
 
 	/*
 	* getCollection
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -430,8 +441,9 @@ Class Discovery {
 	* @result String
 	* 
 	*/
-	public function getCollection($url, $username, $password, $environmentId, $collectionId) {
+	public function getCollection($username, $password, $environmentId, $collectionId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 
@@ -454,7 +466,6 @@ Class Discovery {
 
 	/*
 	* updateCollection
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -468,8 +479,9 @@ Class Discovery {
 	* This operation is invalid for read-only environments
 	* 
 	*/
-	public function updateCollection($url, $username, $password, $environmentId, $collectionId, $collectionName, $collectionDesc, $configurationId) {
+	public function updateCollection($username, $password, $environmentId, $collectionId, $collectionName, $collectionDesc, $configurationId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 
@@ -497,7 +509,6 @@ Class Discovery {
 
 	/*
 	* getCollectionFields
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -506,8 +517,9 @@ Class Discovery {
 	* @result String
 	* 
 	*/
-	public function getCollectionFields($url, $username, $password, $environmentId, $collectionId) {
+	public function getCollectionFields($username, $password, $environmentId, $collectionId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}/fields?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 
@@ -530,7 +542,6 @@ Class Discovery {
 
 	/*
 	* deleteCollection
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -540,8 +551,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function deleteCollection($url, $username, $password, $environmentId, $collectionId) {
+	public function deleteCollection($username, $password, $environmentId, $collectionId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 
@@ -564,7 +576,6 @@ Class Discovery {
 
 	/*
 	* createDocument
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -575,8 +586,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function createDocument($url, $username, $password, $environmentId, $collectionId, $documentUrl) {
+	public function createDocument($username, $password, $environmentId, $collectionId, $documentUrl) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}/documents?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 
@@ -602,7 +614,6 @@ Class Discovery {
 
 	/*
 	* updateDocument
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -614,8 +625,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function updateDocument($url, $username, $password, $environmentId, $collectionId, $documentId, $documentUrl) {
+	public function updateDocument($username, $password, $environmentId, $collectionId, $documentId, $documentUrl) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}/documents/{document_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 		$url = str_replace("{document_id}", $documentId, $url);
@@ -642,7 +654,6 @@ Class Discovery {
 
 	/*
 	* getDocument
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -653,8 +664,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function getDocument($url, $username, $password, $environmentId, $collectionId, $documentId) {
+	public function getDocument($username, $password, $environmentId, $collectionId, $documentId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}/documents/{document_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 		$url = str_replace("{document_id}", $documentId, $url);
@@ -678,7 +690,6 @@ Class Discovery {
 
 	/*
 	* deleteDocument
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -689,8 +700,9 @@ Class Discovery {
 	* 
 	* This operation is invalid for read-only environments
 	*/
-	public function deleteDocument($url, $username, $password, $environmentId, $collectionId, $documentId) {
+	public function deleteDocument($username, $password, $environmentId, $collectionId, $documentId) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}/documents/{document_id}?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 		$url = str_replace("{document_id}", $documentId, $url);
@@ -714,7 +726,6 @@ Class Discovery {
 
 	/*
 	* query
-	* @param url
 	* @param username
 	* @param password
 	* @param environmentId
@@ -727,8 +738,9 @@ Class Discovery {
 	* @result String
 	* 
 	*/
-	public function query($url, $username, $password, $environmentId, $collectionId, $keywords, $count, $filter, $return) {
+	public function query($username, $password, $environmentId, $collectionId, $keywords, $count, $filter, $return) {
 
+		$url = self::BASE_URL . "/{environment_id}/collections/{collection_id}/query?version=2016-12-01";
 		$url = str_replace("{environment_id}", $environmentId, $url);
 		$url = str_replace("{collection_id}", $collectionId, $url);
 
@@ -756,6 +768,5 @@ Class Discovery {
 		return $result;
 
 	}
-
-}
+}	
 ?>
