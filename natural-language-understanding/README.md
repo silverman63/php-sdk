@@ -1,6 +1,5 @@
 # Natural Language Understanding
 
-
 ## Usage
 The [Natural Language Understanding][natural-language-understanding] wraps the environment, collection, configuration, document, and query operations of the Discovery service.
 
