@@ -1,4 +1,4 @@
-# Natural Language Classifier
+# Personality Insights
 
 ## Usage
 Use linguistic analytics to infer personality and social characteristics, including Big Five, Needs, and Values, from text.  

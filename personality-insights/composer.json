@@ -1,6 +1,6 @@
 {
     "name":             "watson-developer-cloud/php-sdk/personality-insights",
-    "version": 			"1.0",
+    "version": 			"1.1",
     "description":      "IBM Watson Services - Personality Insights",
     "keywords":         [
                           "ibm",
