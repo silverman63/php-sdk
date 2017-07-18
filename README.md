@@ -13,7 +13,7 @@ The PHP SDK uses the [Watson Developer Cloud][wdc] services, a collection of RES
     * [Natural Language Understanding](natural-language-understanding)
     * [Natural Language Classifier](natural-language-classifier)
     * [Personality Insights](personality-insights)
-    * [Tone Analyzer](tone_analyzer)
+    * [Tone Analyzer](tone-analyzer)
 
 ## Installation
 
