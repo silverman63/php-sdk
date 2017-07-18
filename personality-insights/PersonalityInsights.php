@@ -18,7 +18,16 @@ class PersonalityInsights {
 	function __construct() {
        
     }
-    
+
+	/*
+	* getProfile
+	* @param username
+	* @param password
+	* @$text
+	* 
+	* @result String
+	* 
+	*/    
     function getProfile($username, $password, $text) {
     	
     	$url = self::BASE_URL . "/profile?version=2016-10-20";
