@@ -9,7 +9,7 @@ $version = "2016-05-19";
 $tones = "emotion";
 
 $ta = new ToneAnalyzer();
-$ta->getProfile($username, $password, $text, $version, $tones);
+$ta->getTone($username, $password, $text, $version, $tones);
 ```
 
 [tone_analyzer]: https://www.ibm.com/watson/developercloud/doc/tone-analyzer/index.html
