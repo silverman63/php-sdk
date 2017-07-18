@@ -1,0 +1,19 @@
+{
+    "name":             "watson-developer-cloud/php-sdk/tone-analyzer",
+    "version": 			"1.0",
+    "description":      "IBM Watson Services - Tone Analyzer",
+    "keywords":         [
+                          "ibm",
+                          "watson",
+                          "wdc",
+                          "watson developer cloud",
+                          "tone analyzer"],
+    "homepage":         "https://github.com/ThomasIBM/php-sdk/tree/master/tone-analyzer",
+    "time":             "2017-06-23",
+    "license":          "Apache-2.0",
+    "authors": [{
+        "name":         "Thomas",
+        "email":        "guojial@cn.ibm.com",
+        "homepage":     "https://github.com/ThomasIBM"
+    }]
+}
